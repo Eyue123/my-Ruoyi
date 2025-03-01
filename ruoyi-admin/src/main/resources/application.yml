@@ -7,7 +7,7 @@ ruoyi:
   # 版权年份
   copyrightYear: 2025
   # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/ruoyi/uploadPath）
-  profile: D:/ruoyi/uploadPath
+  profile: /home/qinjiang/uploadPath
   # 获取ip地址开关
   addressEnabled: false
   # 验证码类型 math 数字计算 char 字符验证
@@ -71,7 +71,7 @@ spring:
     # 本地
     #host: localhost
     # 服务器
-    host: 192.168.0.104
+    host: 192.168.0.106
     # 端口，默认为6379
     port: 6379
     # 数据库索引
