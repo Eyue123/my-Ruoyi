@@ -12,6 +12,9 @@ public class SysconfigTest {
         String name = Sysconfig.getString("name");
         System.out.println(name);
 
+        String direct = "直接上海农商";
+        System.out.println(direct);
+
         String nameUnicode = Sysconfig.getString("nameUnicode");
         System.out.println(nameUnicode);
 
