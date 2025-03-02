@@ -129,17 +129,17 @@ public class DeleteOldFilesAndFolders {
                             // 获取文件的创建时间
                             Path filePath = file.toPath();
                             BasicFileAttributes attrs = Files.readAttributes(filePath, BasicFileAttributes.class);
-                            FileTime creationTime = attrs.creationTime();
+                            FileTime lastModifiedTime = attrs.lastModifiedTime();
 
                             // 将FileTime转换为LocalDateTime
-                            LocalDateTime fileCreationDateTime = LocalDateTime.ofInstant(
-                                    creationTime.toInstant(), systemZone);
+                            LocalDateTime fileLastModifiedDateTime = LocalDateTime.ofInstant(
+                                    lastModifiedTime.toInstant(), systemZone);
 
                             // 比较文件创建时间是否早于一个月前
-                            if (fileCreationDateTime.isBefore(oneMonthAgo)) {
+                            if (fileLastModifiedDateTime.isBefore(oneMonthAgo)) {
                                 totalFilesProcessed++;
                                 System.out.println("删除文件: " + file.getAbsolutePath() +
-                                        " (创建时间: " + fileCreationDateTime + ")");
+                                        " (最后修改时间: " + fileLastModifiedDateTime + ")");
 
                                 // 删除文件
                                 try {

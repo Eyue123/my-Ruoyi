@@ -2,6 +2,8 @@ package myTest;
 
 import com.ruoyi.justForTest.Sysconfig;
 
+import java.time.ZoneId;
+
 public class SysconfigTest {
 
     public static void main(String[] args) {
@@ -17,6 +19,9 @@ public class SysconfigTest {
 
         String nameUnicode = Sysconfig.getString("nameUnicode");
         System.out.println(nameUnicode);
+
+        ZoneId systemZone = ZoneId.systemDefault();
+        System.out.println(systemZone);
 
         // 资源键不存在，应返回 "0"
         String nonExistingKeyResult = Sysconfig.getString("nonExistingKey");
